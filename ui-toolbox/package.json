@@ -1,0 +1,15 @@
+{
+  "name": "ui-toolbox",
+  "version": "1.0.0",
+  "description": "this is a demo program for ui-toolbox",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "server": "http-server -p 8000"
+  },
+  "keywords": [],
+  "author": "scott.liu",
+  "license": "ISC"
+}

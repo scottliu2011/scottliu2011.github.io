@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>linkedlist demo</title>
+		<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+		<link rel="stylesheet" type="text/css" href="css/painter.css"/>
+	</head>
+	<body>
+		<div class="module code">
+			<pre id="codePrint"><p>该页面演示LinkedList API的使用，点击下方按钮开始演示</p></pre>
+			<div id="codeTip"><span></span></div>
+		</div>
+		<div class="module">
+			<span id="nextStep">开始运行</span>
+			<span id="outputTip">请查看下面输出</span>
+		</div>
+		<div class="module console">
+			<div id="consolePrint"></div>
+			<div>
+				<span style="color:gray">></span><span id="consoleTip">|</span>
+			</div>
+		</div>
+<pre id="preCodes" class="list">
+//------------------------------begin
+//导出LinkedList、Collection、List、ArrayList、HashSet类
+jcollections.exports('LinkedList', 'Collection', 'List', 'ArrayList', 'HashSet');
+var list = new LinkedList();//创建一个LinkedList实例
+console.log('是否是Collection类型? ' + (list instanceof Collection));//查看是否是Collection类型
+console.log('是否是List类型? ' + (list instanceof List));//查看是否是List类型
+console.log('初始化: ' + list);//打印集合
+console.log('是否为空? ' + list.isEmpty());//查看集合是否为空
+console.log('查看集合元素个数: ' + list.size());//查看集合元素个数
+$
+list.add('hello');//添加单个元素
+list.add('world');//添加单个元素
+list.add('scott');//添加单个元素
+list.add(1, 2, 3);//添加多个元素
+console.log('添加元素后的集合: ' + list);//查看添加元素后的集合
+console.log('索引为1处的元素是: ' + list.get(1));//查看索引为1处的元素
+console.log('集合首元素是: ' + list.getFirst());//查看首元素
+console.log('集合尾元素是: ' + list.getLast());//查看尾元素
+console.log('是否包含world元素? ' + list.contains('world'));//查看是否包含world元素
+console.log('scott第一次出现的索引是：' + list.indexOf('scott'));//查看scott第一次出现的索引
+console.log('scott最后一次出现的索引是：' + list.lastIndexOf('scott'));//查看scott最后一次出现的索引
+$
+list.insert(1, 'bill');//在索引为1处插入bill元素
+list.insert(4, -1, 0);//在索引为4处插入两个元素：-1和0
+console.log('插入元素后的集合: ' + list);//打印插入操作后的集合
+list.removeAt(2);//移除索引为2处的元素
+console.log('移除索引为2处元素后的集合: ' + list);//移除索引为2处元素后的集合
+list.removeElement('hello');//移除hello元素
+console.log('移除hello元素后的集合: ' + list);//打印移除hello元素后的集合
+list.addFirst('first');//添加一个first元素到头部
+list.addLast('last');//添加一个last元素到尾部
+console.log('添加头部和尾部元素后的集合: ' + list);//打印添加头部和尾部元素后的集合
+list.removeFirst();//移除头部元素
+list.removeLast();//移除尾部元素
+console.log('移除头部和尾部元素后的集合: ' + list);//打印移除头部和尾部元素后的集合
+$
+list.clear();//清空集合
+var list2 = new ArrayList(['a', 'b', 'c']);//新创建一个ArrayList实例
+var list3 = new LinkedList();//新创建一个LinkedList实例
+list3.add('x', 'y', 'z');//向list3中添加元素
+list.addAll(list2);//将list2元素添加到list中
+list.addAll(list3);//将list3元素添加到list中
+console.log('添加集合后的数据: ' + list);//打印添加操作后的集合
+var set = new HashSet();//新创建一个HashSet实例
+set.add(7, 8, 9);//添加元素到set中
+list.insertAll(1, set);//将set元素插入到list索引为1处
+console.log('插入集合后的数据: ' + list);//打印插入操作后的集合
+$
+var iter = list.iterator();//获取一个迭代器
+while (iter.hasNext()) {//是否还有下一个元素
+	var elem = iter.next();//迭代下一个元素
+	if (elem === 7) {//如果元素值等于7，则移除
+		iter.remove();
+	}
+	if (elem === 'z') {//如果元素值等于z，则重置为0
+		iter.set(0);
+	}
+}
+console.log('迭代后的集合: ' + list);//打印迭代后的集合
+$
+console.log('开始从索引为3处迭代');
+var iter2 = list.iterator(3);//获取一个从3开始迭代的迭代器
+while (iter2.hasNext()) {//是否还有下一个元素
+	console.log(iter2.next());//迭代下一个元素
+}
+console.log('迭代结束');
+$
+list.set(1, 'y');//重置索引为1处的元素值为y
+console.log('重置操作后的集合: ' + list);//打印集合
+list.removeFirstOccurrence('y');//移除第一次出现的y元素
+console.log('移除第一个y后的集合: ' + list);//打印集合
+list.removeLastOccurrence('y');//移除最后一次出现的y元素
+console.log('移除最后一个y后的集合: ' + list);//打印集合
+$
+list.clear();//清空集合
+list.defineEquals(function(elem0, elem1) {//定义equals函数，id和name相同则认为是同一元素
+	return elem0.id === elem1.id && elem0.name === elem1.name;
+});
+var Student = function(id, name) {
+	this.id = id;
+	this.name = name;
+	this.toString = function() {
+		return this.id + ' => ' + this.name;
+	};
+};
+var student0 = new Student('001', 'john');
+var student1 = new Student('002', 'tom');
+list.add(student0, student1);//添加两个对象
+console.log('索引为0处的元素：' + list.get(0));//打印索引为0处的元素
+var student2 = new Student('001', 'john');//创建一个id、name都与student0相同的元素
+console.log('集合中是否含有student2对象? ' + list.contains(student2));//查看是否含有student2
+console.log('student2第一次出现在集合中的索引值: ' + list.indexOf(student2));//student2第一次出现在集合中的索引值
+//------------------------------end
+</pre>
+		<script src="../jcollections.js"></script>
+		<script src="js/painter.js"></script>
+		<script src="js/demo.js"></script>
+		<script src="js/logger.js"></script>
+	</body>
+</html>
