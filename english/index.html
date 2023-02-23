@@ -26,7 +26,6 @@
 </head>
 
 <body>
-  <audio id="audio"></audio>
   <button id="start">start</button>
   <section>
     <div id="en"></div>
@@ -36,12 +35,12 @@
 <script>
   const states = {
     sentences: [],
-    nextIndex: 0,
+    audioIndex: 0,
     isPaused: false,
   };
   function fetchData() {
     const count = location.search.substring(1) || '100';
-    return fetch(`./${count}.txt`).then((res) => {
+    return fetch(`https://scottliu2011.github.io/english/${count}.txt`).then((res) => {
       return res.text();
     }).then((text) => {
       const lines = text.split('\n\n');
@@ -57,56 +56,72 @@
   function getAudio(sentence) {
     return `https://dict.youdao.com/dictvoice?type=1&audio=${encodeURIComponent(sentence)}`;
   }
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+  function shuffle(sentences) {
+    for (let i = sentences.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      [sentences[i], sentences[j]] = [sentences[j], sentences[i]];
     }
+    return sentences;
   }
-  function readSentence({ en, cn }) {
+  function readSentence() {
+    const { en, cn } = states.sentences[states.audioIndex];
+
     document.getElementById('en').innerHTML = en;
     document.getElementById('cn').innerHTML = cn;
 
-    audio.setAttribute('src', getAudio(en));
-    audio.play();
-  }
-  function loopSentences(sentences) {
-    const audio = document.getElementById('audio');
+    const audio = document.getElementById(`audio${states.audioIndex}`);
 
-    states.nextIndex = 0;
+    if (audio) {
+      audio.play();
+      return;
+    }
 
-    audio.addEventListener('ended', () => {
-      states.nextIndex = (states.nextIndex + 1) % sentences.length;
+    const newAudio = document.createElement('audio');
+
+    newAudio.setAttribute('id', `audio${states.audioIndex}`);
+    newAudio.setAttribute('src', getAudio(en));
+
+    newAudio.addEventListener('ended', () => {
+      states.audioIndex = (states.audioIndex + 1) % states.sentences.length;
+
       if (states.isPaused) {
         return;
       }
+
       setTimeout(() => {
         if (states.isPaused) {
           return;
         }
-        readSentence(sentences[states.nextIndex]);
+        readSentence();
       }, 1000);
     });
 
-    readSentence(sentences[states.nextIndex]);
+    newAudio.play();
+
+    document.body.appendChild(newAudio);
   }
   document.getElementById('start').addEventListener('click', async () => {
     const sentences = await fetchData();
-    shuffle(sentences);
-    loopSentences(sentences);
-    states.sentences = sentences;
+    states.sentences = shuffle(sentences);
+    readSentence();
   });
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       states.isPaused = !states.isPaused;
       if (states.isPaused) {
         document.body.classList.add('paused');
-        const audio = document.getElementById('audio');
-        audio.pause();
+        const audio = document.getElementById(`audio${states.audioIndex}`);
+        if (audio) {
+          audio.pause();
+        }
       } else {
         document.body.classList.remove('paused');
-        readSentence(states.sentences[states.nextIndex]);
+        readSentence();
       }
+    } else if (event.code === 'ArrowUp') {
+      // todo
+    } else if (event.code === 'ArrowDown') {
+      // todo
     }
   });
 </script>
