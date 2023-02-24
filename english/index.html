@@ -95,6 +95,12 @@
         readSentence();
       }, 1000);
     });
+    newAudio.addEventListener('error', () => {
+      newAudio.remove();
+      setTimeout(() => {
+        readSentence();
+      }, 1000);
+    });
 
     newAudio.play();
 
