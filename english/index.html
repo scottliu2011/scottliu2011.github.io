@@ -39,8 +39,8 @@
     isPaused: false,
   };
   function fetchData() {
-    const count = location.search.substring(1) || '100';
-    return fetch(`https://scottliu2011.github.io/english/${count}.txt`).then((res) => {
+    const file = location.search.substring(1);
+    return fetch(`https://scottliu2011.github.io/english/${file}.txt`).then((res) => {
       return res.text();
     }).then((text) => {
       const lines = text.split('\n\n');
