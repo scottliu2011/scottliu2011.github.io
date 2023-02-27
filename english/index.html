@@ -63,6 +63,12 @@
     }
     return sentences;
   }
+  function stepForward(step) {
+    states.audioIndex = (states.audioIndex + step) % states.sentences.length;
+    if (states.audioIndex < 0) {
+      states.audioIndex = states.sentences.length - 1;
+    }
+  }
   function readSentence() {
     const { en, cn } = states.sentences[states.audioIndex];
 
@@ -82,7 +88,7 @@
     newAudio.setAttribute('src', getAudio(en));
 
     newAudio.addEventListener('ended', () => {
-      states.audioIndex = (states.audioIndex + 1) % states.sentences.length;
+      stepForward(1);
 
       if (states.isPaused) {
         return;
@@ -106,28 +112,39 @@
 
     document.body.appendChild(newAudio);
   }
-  document.getElementById('start').addEventListener('click', async () => {
+  function pauseCurrentAudio(reset) {
+    const audio = document.getElementById(`audio${states.audioIndex}`);
+    if (audio) {
+      audio.pause();
+      if (reset) {
+        audio.currentTime = 0;
+      }
+    }
+  }
+  document.getElementById('start').addEventListener('click', async (e) => {
     const sentences = await fetchData();
     states.sentences = shuffle(sentences);
     readSentence();
+    e.target.remove();
   });
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       states.isPaused = !states.isPaused;
       if (states.isPaused) {
         document.body.classList.add('paused');
-        const audio = document.getElementById(`audio${states.audioIndex}`);
-        if (audio) {
-          audio.pause();
-        }
+        pauseCurrentAudio();
       } else {
         document.body.classList.remove('paused');
         readSentence();
       }
-    } else if (event.code === 'ArrowUp') {
-      // todo
-    } else if (event.code === 'ArrowDown') {
-      // todo
+    } else if (event.code === 'ArrowLeft') {
+      pauseCurrentAudio(true);
+      stepForward(-1);
+      readSentence();
+    } else if (event.code === 'ArrowRight') {
+      pauseCurrentAudio(true);
+      stepForward(1);
+      readSentence();
     }
   });
 </script>
