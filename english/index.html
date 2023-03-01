@@ -70,6 +70,8 @@
     }
   }
   function readSentence() {
+    document.body.classList.remove('paused');
+
     const { en, cn } = states.sentences[states.audioIndex];
 
     document.getElementById('en').innerHTML = en;
@@ -134,7 +136,6 @@
         document.body.classList.add('paused');
         pauseCurrentAudio();
       } else {
-        document.body.classList.remove('paused');
         readSentence();
       }
     } else if (event.code === 'ArrowLeft') {
