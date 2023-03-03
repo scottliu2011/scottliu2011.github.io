@@ -115,13 +115,11 @@
 
     document.body.appendChild(newAudio);
   }
-  function pauseCurrentAudio(reset) {
+  function pauseCurrentAudio() {
     const audio = document.getElementById(`audio${states.audioIndex}`);
     if (audio) {
       audio.pause();
-      if (reset) {
-        audio.currentTime = 0;
-      }
+      audio.currentTime = 0;
     }
   }
   document.getElementById('start').addEventListener('click', async (e) => {
@@ -140,11 +138,11 @@
         readSentence();
       }
     } else if (event.code === 'ArrowLeft') {
-      pauseCurrentAudio(true);
+      pauseCurrentAudio();
       stepForward(-1);
       readSentence();
     } else if (event.code === 'ArrowRight') {
-      pauseCurrentAudio(true);
+      pauseCurrentAudio();
       stepForward(1);
       readSentence();
     }
