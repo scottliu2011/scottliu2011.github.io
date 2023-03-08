@@ -22,6 +22,10 @@
       text-align: center;
       color: slategrey;
     }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -29,7 +33,7 @@
   <button id="start">start</button>
   <section>
     <div id="en"></div>
-    <div id="cn"></div>
+    <div id="cn" class="hidden"></div>
   </section>
 </body>
 <script>
@@ -153,6 +157,13 @@
       pauseCurrentAudio();
       stepForward(1);
       readSentence();
+    } else if (event.code === 'KeyC') {
+      const cn = document.getElementById('cn');
+      if (cn.classList.contains('hidden')) {
+        cn.classList.remove('hidden');
+      } else {
+        cn.classList.add('hidden');
+      }
     }
   });
 </script>
