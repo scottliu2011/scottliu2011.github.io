@@ -79,7 +79,7 @@
 
     const { en, cn } = states.sentences[states.audioIndex];
 
-    document.getElementById('en').innerHTML = en;
+    document.getElementById('en').innerHTML = `${states.audioIndex + 1}. ${en}`;
     document.getElementById('cn').innerHTML = cn;
 
     const audio = document.getElementById(`audio${states.audioIndex}`);
