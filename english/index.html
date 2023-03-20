@@ -95,11 +95,11 @@
     newAudio.setAttribute('src', getAudio(en));
 
     newAudio.addEventListener('ended', () => {
-      stepForward(1);
-
       if (states.isPaused) {
         return;
       }
+
+      stepForward(1);
 
       setTimeout(() => {
         if (states.isPaused) {
