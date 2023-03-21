@@ -13,5 +13,8 @@ put aside something
 and so forth
 等等，及诸如此类
 
-boils down to
-说到底
+boils down to ...
+说到底还是...
+
+prior to ...
+在...之前
