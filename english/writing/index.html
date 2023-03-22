@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Writing</title>
+  <style type="text/css">
+    body {
+      padding: 0 15%;
+      font-family: monospace;
+      background-color: #191919;
+      color: #fff;
+      opacity: .6;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-top: 50px;
+    }
+
+    p {
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const file = location.search.substring(1) || 'articles';
+    fetch(`https://scottliu2011.github.io/english/writing/${file}.md`).then(res => res.text()).then((md) => {
+      document.getElementById('content').innerHTML = marked.parse(md);
+    });
+  </script>
+</body>
+
+</html>
