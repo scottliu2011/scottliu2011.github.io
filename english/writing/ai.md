@@ -1,9 +1,5 @@
 
-```
-Write an article by using these words:
-
-sway, entice, coax, incite, impel, wheedle, contrive, wangle, gall, madden, exasperate, nettle, vex, irk, rile, pique, glean, procure, fathom, nab, baffle, bewilder, confound, perplex, mystify, stump, flummox, nonplus, excite.
-```
+**Write an article by using these words: sway, entice, coax, incite, impel, wheedle, contrive, wangle, gall, madden, exasperate, nettle, vex, irk, rile, pique, glean, procure, fathom, nab, baffle, bewilder, confound, perplex, mystify, stump, flummox, nonplus, excite.**
 
 The Art of Persuasion: A Journey Through Emotions and Manipulation
 
