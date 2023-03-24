@@ -15,9 +15,9 @@
     const wordsFileAmount = 7;
     const wordsLinks = [];
     for (let i = 1; i <= wordsFileAmount; i++) {
-      const link = `/english/words/?${i}`;
+      const link = `/english/words/?${i}00`;
       const visitCount = localStorage[link] || 0;
-      wordsLinks.push(`<div><a href="${link}">words ${i} (${visitCount})</a></div>`);
+      wordsLinks.push(`<div><a href="${link}">words ${i}00</a> (${visitCount})</div>`);
     }
     document.getElementById('wordsLinks').innerHTML = wordsLinks.join('');
   </script>
