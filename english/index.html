@@ -5,15 +5,20 @@
   </head>
   <body>
     <h1>Words</h1>
-    <a href="/english/words/?100">100</a>
-    <a href="/english/words/?200">200</a>
-    <a href="/english/words/?300">300</a>
-    <a href="/english/words/?400">400</a>
-    <a href="/english/words/?500">500</a>
-    <a href="/english/words/?600">600</a>
+    <div id="wordsLinks"></div>
     <h1>Writing</h1>
     <a href="/english/writing/?proses">proses</a>
     <a href="/english/writing/?articles">articles</a>
     <a href="/english/writing/?readers">readers</a>
   </body>
+  <script>
+    const wordsFileAmount = 7;
+    const wordsLinks = [];
+    for (let i = 1; i <= wordsFileAmount; i++) {
+      const link = `/english/words/?${i}`;
+      const visitCount = localStorage[link] || 0;
+      wordsLinks.push(`<div><a href="${link}">words ${i} (${visitCount})</a></div>`);
+    }
+    document.getElementById('wordsLinks').innerHTML = wordsLinks.join('');
+  </script>
 </html>
