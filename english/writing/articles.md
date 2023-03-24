@@ -77,3 +77,36 @@ One of the main reasons is that schools nowadays always focus on teaching academ
 To address this problem, schools should provide more occasions to encourage students to interact with each other. For example, teachers can require learners to make a presentation in class and to accept the inquiry from their peers. Additionally, it should be noted that free time activities, such as playing sports can help the attendants learn about practical matters. In this case, school authorities should organize some relevant events to let students sociable. To further enhance the interaction ability, companies can require new employees not to take their mobile phones with them during the training process. What the newcomers should do is cooperate with other colleagues to figure out solutions to some cases. Those who fail to achieve this goal will be dismissed. Faced with tremendous pressure, graduates may quickly learn to build interpersonal ties.
 
 As analyzed above, this issue seems to be complicated, but with effective approaches, we are confident to solve it strategically.
+
+# 6. Disparity of cities and rural areas and the measure
+
+Subject:
+
+A rise in the standard of living in a country often only seems to benefit cities rather than rural areas. What problems might this difference cause? How might these problems be reduced?
+
+Model:
+
+There has been a significant rise in the living standards of people in many countries, such as better education quality and smaller income disparity. However, it seems that such improvements are mostly enjoyed by urban dwellers rather than those living in the countryside, which, in my opinion, will result in many undesirable outcomes for both cities and rural areas. 
+As urban lives keep becoming increasingly appealing, a large number of people will be drawn to cities either in search of more employment opportunities or seeking superior health care. This will pose tremendous pressure on both locals and newcomers to big cities, such as rising living costs, frustrating traffic congestion, and intense competition for jobs.
+
+As for rural areas, the problems caused are also significant. To be specific, there will be a severe shortage of labor force working in the agricultural industry, with too many people migrating from villages to towns and cities. As a result, farming land would be left uncultivated and crop yields would significantly decline, possibly followed by a rise in food prices nationwide.
+
+I think, therefore, that measures should be taken to narrow the gap in life quality between urban and rural areas. Firstly, tax reduction and exemption could be a possible solution to the problem of the labor drain. In other words, both individuals and businesses will choose to stay if there is such a favorable (preferential) policy. Secondly, the government could also make people willing to stay where they were born and grew up by improving local living conditions, such as budgeting more money towards education and health services.
+
+In conclusion, the problems caused by the disparity between cities and villages are concerning the people of both places. They can only be solved if the government takes more responsibility for closing the gap.
+
+# 7. Agree or disagree about benefiting from modern communication technology
+
+Subject:
+
+Some people have benefited from modern communication technology, but some groups of people have not benefited at all. To what extent do you agree or disagree? 
+
+Model:
+
+The 21st century has seen a large number of changes that are beyond our wildest expectations. One of these advances is the rapid development of communications technology. The advantages of convenience and high efficiency brought by digital communication are obvious, but I do not think that everyone has access to these benefits.
+
+Digital forms of communication enable many people, mainly including students, families as well as entrepreneurs, to reap the maximum benefits. From an educational perspective, learning can be incredibly efficient and effective, as students having an internet connection can virtually solve all their puzzles by browsing teaching websites or asking for help from teachers simultaneously. Internet-based communication also contributes positively to strengthening family relationships and increasing closeness between family members. For example, students who attend boarding schools or study abroad can keep in daily contact easily with parents by sending greeting messages or camera chatting. What is more, companies can be run at a much lower cost because the internet and computers help to expand business cheaply and because information technology allows employees to work at home, which saves most of the rent for office space.
+
+However, I would argue that the benefits of information and communication technology are restricted to certain groups of users. In other words, some people, particularly the old and the poor, are not beneficiaries of modern ways of communication. Concerning the former, a large percentage of elderly people are unable and reluctant to adapt to new technology, which means that they barely enjoy the convenience and fun brought by the devices. As for people living in extreme poverty, mobile phones, computers, and any other electronic devices are luxuries. All web-based activities mean nothing to them, neither making them relaxed nor providing them with career opportunities.
+
+In conclusion, I agree with the idea that technological advances in information and communication have only brought benefits to a certain group of people, even though it is a large group. 
