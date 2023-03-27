@@ -2,11 +2,11 @@
 
 Subject:
 
-Some people think governments should build more train and subway lines to reduce traffic congestion. Others think building more and wider roads is better. Discuss both views and give your own opinion.
+Some people think governments should build more train and subway lines to **reduce traffic congestion**. Others think building more and wider roads is better. Discuss both views and give your own opinion.
 
 Model:
 
-Traffic congestion is frustrating and bothering many commuters in cities, with conflicting views on how to tackle this worrying trend. Some people claim that more train and subway lines should be constructed by the government. Others, however, believe that it is much better to widen the roads and build extra ones.
+Traffic congestion is frustrating and bothering many **commuters** in cities, with **conflicting views** on how to tackle this worrying trend. Some people claim that more train and subway lines should be constructed by the government. Others, however, believe that it is much better to widen the roads and build extra ones.
 
 Providing more railway and underground lines tends to have a favorable influence on dealing with traffic jams. The key reason lies in the fact that compared with other modes of transport, a train has the capability to convey hundreds of passengers every time. Meanwhile, the track enables these vehicles to move smoothly without waiting for the traffic lights frequently. Thus the efficiency of the ground and underground railway system overwhelmingly dwarfs that of others, which ensures that travelers reach their destination on time. For these reasons, the advantages of the metro can attract a large number of car owners to abandon the use of their cars and choose to commute by train. In the long run, the possibility of traffic congestion can be reduced.
 
