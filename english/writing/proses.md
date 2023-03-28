@@ -41,3 +41,13 @@ Books possess an essence of immortality. They are by far the most lasting produc
 Books introduce us to the best society; they bring us into the presence of the greatest minds that have ever lived. We hear what they said and did; we see the as if they were really alive; we sympathize with them, enjoy with them, grieve with them; their experience becomes ours, and we feel as if we were in a measure actors with them in the scenes which they describe.
 
 The great and good do not die, even in this world. Embalmed in books, their spirits walk abroad. The book is a living voice. It is an intellect to which one still listens.
+
+# 4. If I rest, I rust
+
+The significant inscription found on an old key "If I rest, I rust" would be an excellent motto for those who are afflicted with the slightest bit of idleness. Even the most industrious person might adopt it with the advantage to serve as a reminder that, if one allows his faculties to rest, like the iron in the unused key, they will soon show signs of rust and, ultimately, cannot do the work required of them.
+
+Those who would attain the heights reached and kept by great men must keep their faculties polished by constant use, so that they may unlock the doors of knowledge, the gate that guard the entrances to the professions, to science, art, literature, agriculture - every department of human endeavor.
+
+Industry keeps bright the key that opens the treasury of achievement. If Hugh Miller, after toiling all day in a quarry, had devoted his evenings to rest and recreation, he would never have become a famous geologist. The celebrated mathematician, Edmund Stone, would never have published a mathematical dictionary, never have found the key to science of mathematics, if he had given his spare moments to idleness, had the little Scotch lad, Ferguson, allowed the busy brain to go to sleep while he tended sheep on the hillside instead of calculating the position of the stars by a string of beads, he would never have become a famous astronomer.
+
+Labor vanquishes all - not inconstant, spasmodic, or ill-directed labor; but faithful, unremitting, daily effort toward a well-directed purpose. Just as truly as eternal vigilance is the price of liberty, so is eternal industry the price of noble and enduring success.
