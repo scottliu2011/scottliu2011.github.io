@@ -10,3 +10,5 @@ At times, the process can gall even the most patient person, madden the calmest 
 Along the way, one must glean information, procure allies, and fathom the depths of their target's psyche. To nab their attention, one must baffle, bewilder, and confound them, leaving them perplexed and mystified. It's a challenge to stump the most knowledgeable, flummox the wisest, and nonplus the most experienced.
 
 In the end, the art of persuasion is a thrilling journey, one that can excite and invigorate those who dare to embark upon it.
+
+Online speech: https://www.naturalreaders.com/online/
