@@ -39,3 +39,15 @@ How many loaves of bread will be made from that field of wheat! How many hungry 
 The autumn winds are sighing, sighing in the trees. The ripened corn is waving, waving in the breeze. The harvest moon is shining, shining in the night. Over hill and valley, in floods of silver light.
 
 The swallows come together, together from the eaves. Waiting for the falling, the falling of the leaves. They know the time is coming, the time when they must flee away to brighter sunshine, far, far across the sea.
+
+# 4. Winter
+
+Winter has come at last. There are no flowers now in the garden, and every leaf is gone from the trees.
+
+The snow lies thick upon the ground, and the poor little birds hop about seeking in vain for food.
+
+Here comes little robin redbreast. Do you see him on the tree? He is a bold little fellow. If we put some crumbs of bread upon the tile window-sill, he will come and pick them up. But we must be very quiet, or he will take fright and fly away. Pretty robin, come again tomorrow, and we will give you some more nice crumbs.
+
+In winter we should think of the wants of the poor. Many a child has no fire to warm him, little food to eat, or clothing to shield him from the cold. But you must, with all your heart, try to help the poor.
+
+Though we do not now see leaves and flowers, still the roots of the plants are safely locked up beneath the snow. Again the voice of Spring will be heard. Again the flowers will burst into beauty, and the trees will put on their robe of green. They are not dead. They are only in their winter sleep.
