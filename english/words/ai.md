@@ -3,7 +3,7 @@
 
 The Art of Persuasion: A Journey Through Emotions and Manipulation
 
-In the world of persuasion, one must learn to sway their audience, using various techniques to entice and coax them into agreement. Some may incite strong emotions, impel action, or even wheedle their way into someone's good graces. It's a delicate dance, where one must contrive and wangle their way through a myriad of emotions.
+In the world of persuasion, one must learn to sway their audience, using various techniques to entice and coax them into an agreement. Some may incite strong emotions, impel action, or even wheedle their way into someone's good graces. It's a delicate dance, where one must contrive and wangle their way through a myriad of emotions.
 
 At times, the process can gall even the most patient person, madden the calmest soul, and exasperate the most understanding individual. It's a game of nettles and roses, where one must navigate the vexing thorns to reach the sweet reward. To irk or rile someone may be a temporary setback, but to pique their interest is the ultimate goal.
 
