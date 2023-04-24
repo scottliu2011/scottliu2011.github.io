@@ -103,6 +103,13 @@
 
       stepForward(1);
 
+      if (states.audioIndex >= states.sentences.length) {
+        states.isPaused = true;
+        document.body.classList.add('paused');
+        pauseCurrentAudio();
+        return;
+      }
+
       setTimeout(() => {
         if (states.isPaused) {
           return;
