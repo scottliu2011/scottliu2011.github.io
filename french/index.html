@@ -10,7 +10,7 @@
       background-color: gainsboro;
       color: slategrey;
     }
-    
+
     #content {
       width: 1000px;
       margin: 0 auto;
@@ -29,11 +29,13 @@
 
 <body>
   <div id="content"></div>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    const file = location.search.substring(1);
-    fetch(`https://scottliu2011.github.io/english/speech/${file}.md`).then(res => res.text()).then((md) => {
-      document.getElementById('content').innerHTML = marked.parse(md);
+    fetch('https://scottliu2011.github.io/french/phrases.txt').then(res => res.text()).then((txt) => {
+      const phrases = txt.split('\n').map((phrase) => {
+        const link = `https://translate.google.com/?sl=fr&tl=en&op=translate&text=${encodeURIComponent(phrase)}`;
+        return `<p><a href="${link}" target="_blank">${phrase}</a></p>`;
+      });
+      document.getElementById('content').innerHTML = phrases.join('');
     });
   </script>
 </body>
