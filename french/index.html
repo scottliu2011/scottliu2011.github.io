@@ -24,16 +24,26 @@
     p {
       font-size: 25px;
     }
+
+    a {
+      text-decoration: none;
+      color: slategrey;
+    }
   </style>
 </head>
 
 <body>
   <div id="content"></div>
   <script>
+    const translateUrl = 'https://translate.google.com/?sl=fr&tl=en&op=translate&text=';
     fetch('https://scottliu2011.github.io/french/phrases.txt').then(res => res.text()).then((txt) => {
-      const phrases = txt.split('\n').map((phrase) => {
-        const link = `https://translate.google.com/?sl=fr&tl=en&op=translate&text=${encodeURIComponent(phrase)}`;
-        return `<p><a href="${link}" target="_blank">${phrase}</a></p>`;
+      const phrases = txt.split('\n').filter((phrase) => Boolean(phrase)).map((phrase) => {
+        const words = phrase.split(' ').map((word) => {
+          return `<a class="plain" href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
+        }).join(' ');
+        return (
+          `<p>${words} <a href="${translateUrl + encodeURIComponent(phrase)}" target="_blank">🔊</a></p>`
+        );
       });
       document.getElementById('content').innerHTML = phrases.join('');
     });
