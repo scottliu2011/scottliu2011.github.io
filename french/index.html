@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>En route</title>
+  <style type="text/css">
+    body {
+      font-family: monospace;
+      background-color: gainsboro;
+      color: slategrey;
+    }
+
+    #outline {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      border: 1px solid slategrey;
+      padding: 10px;
+    }
+
+    #content {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 35px;
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    a {
+      color: black;
+      opacity: 0.7;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    li {
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .audio-wrapper {
+      margin-top: 35px;
+    }
+
+    audio {
+      width: 60%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outline"></div>
+  <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const learntCount = 2;
+    const frenchPrefix = 'https://scottliu2011.github.io/french';
+    const translateUrl = 'https://translate.google.com/?sl=fr&tl=en&op=translate&text=';
+    function showContent(i) {
+      fetch(`${frenchPrefix}/sequence-${i}.md?t=${Date.now()}`).then(res => res.text()).then((md) => {
+        const contentHtml = `
+          <div class="md-wrapper">
+            ${marked.parse(md)}
+          </div>
+          <div class="audio-wrapper">
+            <audio controls="controls">
+              <source src="${frenchPrefix}/sequence-${i}.mp3" />
+            </audio>
+          </div>
+        `;
+        document.getElementById('content').innerHTML = contentHtml;
+        const elements = document.querySelectorAll('.md-wrapper *');
+        elements.forEach((element) => {
+          if (element.childNodes.length === 1) {
+            const words = element.textContent.split(' ').map((word) => {
+              return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
+            }).join(' ');
+            element.innerHTML = words;
+          }
+        });
+      });
+    }
+    const navMenus = [];
+    for (let i = 1; i <= learntCount; i++) {
+      navMenus.push(`<p><a href="#${i}" onclick="showContent(${i})">Séquence ${i}</a></p>`);
+    }
+    document.getElementById('outline').innerHTML = navMenus.join('');
+  </script>
+</body>
+
+</html>
