@@ -5,7 +5,7 @@
 ### En classe de français
 
 - Bonjour. Je m'appelle Julie, je suis française et je suis votre professeur de français. Et vous?
-- Bonjour, Thomas Lucas, journaliste, je suis américan, j'adore le français et les Françaises.
+- Bonjour, Thomas Lucas, journaliste, je suis américain, j'adore le français et les Françaises.
 - Salut, je suis japonaise, je suis étudiante, je m'appelle Yoko, moi aussi j'aime le français. Mais c'est difficile pour moi.
 - Salut, Wang LeiLei, LeiLei, c'est mon prénom, Wang, c'est mon nom de famille. Je suis chinois, je suis avocat. Je parle anglais.
 
