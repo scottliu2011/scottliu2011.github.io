@@ -11,6 +11,6 @@
 
 ### Qui est-ce?
 
-- Salut, je suis Thomas Lucas, américan. Tu es chinoise?
+- Salut, je suis Thomas Lucas, américain. Tu es chinoise?
 - Non, japonaise, je m'appelle Yoko. Elle, là-bas, elle est chinoise. Elle s'appelle Lin. Lui, c'est qui?
 - C'est Claude, professeur de français! Il est canadien.
