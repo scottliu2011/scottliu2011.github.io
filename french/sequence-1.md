@@ -1,4 +1,4 @@
-# Séquence 1: Premier jour en classe de français
+# Premier jour en classe de français
 
 ## Dialogue 1
 
