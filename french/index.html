@@ -91,7 +91,7 @@
             const words = element.textContent.split(' ').map((word) => {
               return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
             }).join(' ');
-            element.innerHTML = words;
+            element.innerHTML = `${words} <a href="${translateUrl + encodeURIComponent(element.textContent)}" target="_blank">🔊</a>`;
           }
         });
       });
