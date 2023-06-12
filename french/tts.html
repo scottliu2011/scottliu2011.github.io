@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>tts</title>
+  <style type="text/css">
+    body {
+      font-family: monospace;
+      background-color: gainsboro;
+    }
+
+    textarea {
+      width: 500px;
+      height: 200px;
+      padding: 5px;
+    }
+
+    span {
+      display: inline-block;
+      height: 210px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <textarea id="source"></textarea>
+    <span>>>></span>
+    <textarea id="target"></textarea>
+  </div>
+  <script>
+    const source = document.getElementById('source');
+    const target = document.getElementById('target');
+    source.addEventListener('keyup', () => {
+      const lines = source.value.split('\n')
+        .filter((line) => {
+          return line.trim().length > 0;
+        });
+      let newLines = [];
+      lines.forEach((line) => {
+        newLines.push(line.trim());
+        newLines.push('<break time="1s"/>');
+      });
+      newLines.pop();
+      const resultLines = [
+        '<prosody rate="slow">',
+        '<break time="0.5s"/>',
+        ...newLines,
+        '<break time="0.5s"/>',
+        '</prosody>',
+      ].join('\n');
+      target.value = resultLines;
+    });
+  </script>
+</body>
+
+</html>
