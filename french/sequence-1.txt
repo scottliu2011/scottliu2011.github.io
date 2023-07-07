@@ -1,0 +1,10 @@
+Premier jour en classe de français. | The first day in French class.
+Bonjour. Comment allez-vous? | Good morning. How are you going?
+Bien, merci. Et vous? | Good, thanks. And you?
+Très bien. | Very good.
+Salut. Ça va? | Hi. How are you?
+Oui, et toi? | Nice, and you?
+Je m'appelle Pascal. Et toi? | My name is Pascal. And you?
+Moi, c'est Alice. | Me, My name is Alice.
+Bonne journée, ciao! | Have a good day, bye!
+Salut, à demain. | Bye, see you tomorrow.
