@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>En route</title>
+  <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
   <style type="text/css">
     body {
       font-family: monospace;
@@ -25,19 +26,6 @@
       margin: 0 auto;
     }
 
-    h1 {
-      font-size: 35px;
-      margin-top: 30px;
-    }
-
-    h2 {
-      font-size: 30px;
-    }
-
-    h3 {
-      font-size: 25px;
-    }
-
     p {
       font-size: 20px;
     }
@@ -49,17 +37,18 @@
       cursor: pointer;
     }
 
-    li {
-      font-size: 20px;
-      margin-top: 15px;
+    .gridjs-th {
+      font-size: 22px;
     }
 
-    .audio-wrapper {
-      margin-top: 35px;
+    .gridjs-td {
+      font-size: 18px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
-    audio {
-      width: 60%;
+    .gridjs-td a {
+      text-decoration: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -67,33 +56,40 @@
 <body>
   <div id="outline"></div>
   <div id="content"></div>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
   <script>
     const learntCount = 3;
     const frenchPrefix = 'https://scottliu2011.github.io/french';
     const translateUrl = 'https://translate.google.com/?sl=fr&tl=en&op=translate&text=';
     function showContent(i) {
-      fetch(`${frenchPrefix}/sequence-${i}.md?t=${Date.now()}`).then(res => res.text()).then((md) => {
-        const contentHtml = `
-          <div class="md-wrapper">
-            ${marked.parse(md)}
-          </div>
-          <div class="audio-wrapper">
-            <audio controls="controls">
-              <source src="${frenchPrefix}/sequence-${i}.mp3" />
-            </audio>
-          </div>
-        `;
-        document.getElementById('content').innerHTML = contentHtml;
-        const elements = document.querySelectorAll('.md-wrapper *');
-        elements.forEach((element) => {
-          if (element.childNodes.length === 1) {
-            const words = element.textContent.split(' ').map((word) => {
-              return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
-            }).join(' ');
-            element.innerHTML = `${words} <a href="${translateUrl + encodeURIComponent(element.textContent)}" target="_blank">🔊</a>`;
-          }
-        });
+      const content = document.querySelector('#content');
+      content.innerHTML = '';
+      fetch(`${frenchPrefix}/sequence-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
+        const lines = txt.split('\n')
+          .filter((line) => {
+            return line.trim().length > 0;
+          })
+          .map((line) => {
+            return line.split('|').map((line) => line.trim());
+          });
+        new gridjs.Grid({
+          columns: [
+            {
+              name: 'Français',
+              formatter: (cell) => {
+                const words = cell.split(' ').map((word) => {
+                  return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
+                }).join(' ');
+                const cellHtml = `${words} <a href="${translateUrl + encodeURIComponent(cell)}" target="_blank">🔊</a>`;
+                return gridjs.html(`<b>${cellHtml}</b>`);
+              },
+            },
+            'English',
+          ],
+          data: [
+            ...lines,
+          ],
+        }).render(content);
       });
     }
     const navMenus = [];
