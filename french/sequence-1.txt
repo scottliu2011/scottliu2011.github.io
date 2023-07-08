@@ -8,3 +8,11 @@ Je m'appelle Pascal. Et toi? | My name is Pascal. And you?
 Moi, c'est Alice. | Me, My name is Alice.
 Bonne journée, ciao! | Have a good day, bye!
 Salut, à demain. | Bye, see you tomorrow.
+Je ne comprends pas. | I don't understand.
+Plus fort, s'il vous plaît! | Louder, please!
+Répétez, s'il vous plaît! | Repeat, please!
+Au revoir. | Bye.
+Tu t'appelles Emma. Your name is Emma.
+Il s'appelle Pascal. | His name is Pascal.
+Elle s'appelle Alice. | Her name is Alice.
+Vous vous appelez comment? | What is your name?
