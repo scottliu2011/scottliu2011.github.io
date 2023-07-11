@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>日本語</title>
+  <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <style type="text/css">
+    body {
+      font-family: monospace;
+      background-color: gainsboro;
+      color: slategrey;
+    }
+
+    #outline {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      border: 1px solid slategrey;
+      padding: 10px;
+    }
+
+    #content {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    a {
+      color: black;
+      opacity: 0.7;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .gridjs-th {
+      font-size: 22px;
+    }
+
+    .gridjs-td {
+      font-size: 18px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .gridjs-td a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outline"></div>
+  <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+  <script>
+    const learntCount = 3;
+    const frenchPrefix = 'https://scottliu2011.github.io/japanese';
+    const translateUrl = 'https://translate.google.com/?sl=ja&tl=zh-CN&op=translate&text=';
+    function showContent(i) {
+      const content = document.querySelector('#content');
+      content.innerHTML = '';
+      fetch(`${frenchPrefix}/lesson-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
+        const lines = txt.split('\n')
+          .filter((line) => {
+            return line.trim().length > 0;
+          })
+          .map((line) => {
+            return line.split('|').map((line) => line.trim());
+          });
+        new gridjs.Grid({
+          columns: [
+            {
+              name: '日本語',
+              formatter: (cell) => {
+                const cellHtml = `${cell} <a href="${translateUrl + encodeURIComponent(cell)}" target="_blank">🔊</a>`;
+                return gridjs.html(`<b>${cellHtml}</b>`);
+              },
+            },
+            '中文',
+          ],
+          data: [
+            ...lines,
+          ],
+        }).render(content);
+      });
+    }
+    const navMenus = [];
+    for (let i = 1; i <= learntCount; i++) {
+      navMenus.push(`<p><a href="#${i}" onclick="showContent(${i})">第 ${i} 課</a></p>`);
+    }
+    document.getElementById('outline').innerHTML = navMenus.join('');
+  </script>
+</body>
+
+</html>
