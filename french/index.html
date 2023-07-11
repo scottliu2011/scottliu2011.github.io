@@ -70,9 +70,6 @@
       window.grid?.destroy();
       fetch(`${frenchPrefix}/sequence-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
         const lines = txt.split('\n')
-          .filter((line) => {
-            return line.trim().length > 0;
-          })
           .map((line) => {
             return line.split('|').map((line) => line.trim());
           });
@@ -81,6 +78,9 @@
             {
               name: 'Français',
               formatter: (cell) => {
+                if (!cell) {
+                  return '*';
+                }
                 const words = cell.split(' ').map((word) => {
                   return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
                 }).join(' ');
