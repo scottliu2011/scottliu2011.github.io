@@ -61,6 +61,11 @@
     const learntCount = 3;
     const frenchPrefix = 'https://scottliu2011.github.io/japanese';
     const translateUrl = 'https://translate.google.com/?sl=ja&tl=zh-CN&op=translate&text=';
+    function playSound(sentence) {
+      const newAudio = document.createElement('audio');
+      newAudio.setAttribute('src', `https://dict.youdao.com/dictvoice?le=ja&audio=${sentence}`);
+      newAudio.play();
+    }
     function showContent(i) {
       window.grid?.destroy();
       fetch(`${frenchPrefix}/lesson-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
@@ -76,7 +81,7 @@
                 if (!cell) {
                   return '*';
                 }
-                const cellHtml = `${cell} <a href="${translateUrl + encodeURIComponent(cell)}" target="_blank">🔊</a>`;
+                const cellHtml = `${cell} <a onclick=playSound("${encodeURIComponent(cell)}")>🔊</a>`;
                 return gridjs.html(`<b>${cellHtml}</b>`);
               },
             },
