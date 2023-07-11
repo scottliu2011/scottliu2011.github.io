@@ -61,6 +61,11 @@
     const learntCount = 3;
     const frenchPrefix = 'https://scottliu2011.github.io/french';
     const translateUrl = 'https://translate.google.com/?sl=fr&tl=en&op=translate&text=';
+    function playSound(sentence) {
+      const newAudio = document.createElement('audio');
+      newAudio.setAttribute('src', `https://dict.youdao.com/dictvoice?le=fr&audio=${sentence}`);
+      newAudio.play();
+    }
     function showContent(i) {
       window.grid?.destroy();
       fetch(`${frenchPrefix}/sequence-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
@@ -79,7 +84,7 @@
                 const words = cell.split(' ').map((word) => {
                   return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
                 }).join(' ');
-                const cellHtml = `${words} <a href="${translateUrl + encodeURIComponent(cell)}" target="_blank">🔊</a>`;
+                const cellHtml = `${words} <a onclick=playSound("${encodeURIComponent(cell)}")>🔊</a>`;
                 return gridjs.html(`<b>${cellHtml}</b>`);
               },
             },
