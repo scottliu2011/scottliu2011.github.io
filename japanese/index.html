@@ -62,8 +62,7 @@
     const frenchPrefix = 'https://scottliu2011.github.io/japanese';
     const translateUrl = 'https://translate.google.com/?sl=ja&tl=zh-CN&op=translate&text=';
     function showContent(i) {
-      const content = document.querySelector('#content');
-      content.innerHTML = '';
+      window.grid?.destroy();
       fetch(`${frenchPrefix}/lesson-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
         const lines = txt.split('\n')
           .filter((line) => {
@@ -72,7 +71,7 @@
           .map((line) => {
             return line.split('|').map((line) => line.trim());
           });
-        new gridjs.Grid({
+        window.grid = new gridjs.Grid({
           columns: [
             {
               name: '日本語',
@@ -86,7 +85,8 @@
           data: [
             ...lines,
           ],
-        }).render(content);
+        });
+        window.grid.render(document.querySelector('#content'));
       });
     }
     const navMenus = [];
