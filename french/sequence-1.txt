@@ -19,6 +19,6 @@ Répétez, s'il vous plaît! | Repeat, please!
 
 Vous vous appelez comment? | What is your name?
 Je m'appelle Pascal. | My name is Pascal.
-Tu t'appelles Emma. Your name is Emma.
+Tu t'appelles Emma. | Your name is Emma.
 Il s'appelle Pascal. | His name is Pascal.
 Elle s'appelle Alice. | Her name is Alice.
