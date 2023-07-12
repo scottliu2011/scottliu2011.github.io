@@ -61,18 +61,19 @@
     const learntCount = 5;
     const frenchPrefix = 'https://scottliu2011.github.io/japanese';
     const translateUrl = 'https://translate.google.com/?sl=ja&tl=zh-CN&op=translate&text=';
+    const cachedAudios = {};
     function playSound(sentence) {
+      const key = window.btoa(sentence);
+      const audio = cachedAudios[key];
+      if (audio) {
+        audio.play();
+        return;
+      }
       const newAudio = document.createElement('audio');
       newAudio.setAttribute('src', `https://dict.youdao.com/dictvoice?le=ja&audio=${sentence}`);
       newAudio.playbackRate = 0.8;
       newAudio.play();
-      const onEnded = () => {
-        setTimeout(() => {
-          newAudio.play();
-          newAudio.removeEventListener('ended', onEnded);
-        }, 500);
-      };
-      newAudio.addEventListener('ended', onEnded);
+      cachedAudios[key] = newAudio;
     }
     function showContent(i) {
       window.grid?.destroy();
