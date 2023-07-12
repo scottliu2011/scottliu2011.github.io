@@ -64,6 +64,7 @@
     function playSound(sentence) {
       const newAudio = document.createElement('audio');
       newAudio.setAttribute('src', `https://dict.youdao.com/dictvoice?le=ja&audio=${sentence}`);
+      newAudio.playbackRate = 0.8;
       newAudio.play();
     }
     function showContent(i) {
