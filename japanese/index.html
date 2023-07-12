@@ -60,7 +60,7 @@
   <script>
     const learntCount = 5;
     const frenchPrefix = 'https://scottliu2011.github.io/japanese';
-    const translateUrl = 'https://translate.google.com/?sl=ja&tl=zh-CN&op=translate&text=';
+    const translateUrl = 'https://jisho.org/search/';
     const cachedAudios = {};
     function playSound(sentence) {
       const key = window.btoa(sentence);
@@ -90,7 +90,10 @@
                 if (!cell) {
                   return '*';
                 }
-                const cellHtml = `${cell} <a onclick=playSound("${encodeURIComponent(cell.replace(/　/g, ''))}")>🔊</a>`;
+                const words = cell.split('　').map((word) => {
+                  return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
+                }).join('　');
+                const cellHtml = `${words} <a onclick=playSound("${encodeURIComponent(cell.replace(/　/g, ''))}")>🔊</a>`;
                 return gridjs.html(`<b>${cellHtml}</b>`);
               },
             },
