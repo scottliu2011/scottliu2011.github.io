@@ -66,6 +66,13 @@
       newAudio.setAttribute('src', `https://dict.youdao.com/dictvoice?le=ja&audio=${sentence}`);
       newAudio.playbackRate = 0.8;
       newAudio.play();
+      const onEnded = () => {
+        setTimeout(() => {
+          newAudio.play();
+          newAudio.removeEventListener('ended', onEnded);
+        }, 500);
+      };
+      newAudio.addEventListener('ended', onEnded);
     }
     function showContent(i) {
       window.grid?.destroy();
