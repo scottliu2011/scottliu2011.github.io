@@ -76,8 +76,8 @@
       cachedAudios[key] = newAudio;
     }
     function showContent(i) {
-      window.grid?.destroy();
       fetch(`${frenchPrefix}/lesson-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
+        window.grid?.destroy();
         const lines = txt.split('\n')
           .map((line) => {
             return line.split('|').map((line) => line.trim());
