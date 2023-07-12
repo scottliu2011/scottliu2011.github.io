@@ -81,7 +81,7 @@
                 if (!cell) {
                   return '*';
                 }
-                const cellHtml = `${cell} <a onclick=playSound("${encodeURIComponent(cell)}")>🔊</a>`;
+                const cellHtml = `${cell} <a onclick=playSound("${encodeURIComponent(cell.replace(/　/g, ''))}")>🔊</a>`;
                 return gridjs.html(`<b>${cellHtml}</b>`);
               },
             },
