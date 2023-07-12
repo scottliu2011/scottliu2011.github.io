@@ -61,11 +61,19 @@
     const learntCount = 3;
     const frenchPrefix = 'https://scottliu2011.github.io/french';
     const translateUrl = 'https://translate.google.com/?sl=fr&tl=en&op=translate&text=';
+    const cachedAudios = {};
     function playSound(sentence) {
+      const key = window.btoa(sentence);
+      const audio = cachedAudios[key];
+      if (audio) {
+        audio.play();
+        return;
+      }
       const newAudio = document.createElement('audio');
       newAudio.setAttribute('src', `https://dict.youdao.com/dictvoice?le=fr&audio=${sentence}`);
       newAudio.playbackRate = 0.8;
       newAudio.play();
+      cachedAudios[key] = newAudio;
     }
     function showContent(i) {
       window.grid?.destroy();
