@@ -57,11 +57,27 @@
   <div id="outline"></div>
   <div id="content"></div>
   <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/kuroshiro@1.1.0/dist/kuroshiro.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/kuroshiro-analyzer-kuromoji@1.1.0/dist/kuroshiro-analyzer-kuromoji.min.js"></script>
   <script>
     const learntCount = 6;
     const frenchPrefix = 'https://scottliu2011.github.io/japanese';
-    const translateUrl = 'https://jisho.org/search/';
     const cachedAudios = {};
+    const kuroshiroInstance = new Kuroshiro();
+    let kuroshiroInitDone = false;
+    async function initKuroshiro() {
+      await kuroshiroInstance.init(new KuromojiAnalyzer({
+        dictPath: "dict/"
+      }));
+      kuroshiroInitDone = true;
+    }
+    async function convertText(text) {
+      if (!kuroshiroInitDone) {
+        await initKuroshiro();
+      }
+      return kuroshiroInstance.convert(text, { mode: "furigana" });
+    }
     function playSound(sentence) {
       const key = window.btoa(sentence);
       const audio = cachedAudios[key];
@@ -76,12 +92,19 @@
       cachedAudios[key] = newAudio;
     }
     function showContent(i) {
-      fetch(`${frenchPrefix}/lesson-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
+      fetch(`${frenchPrefix}/lesson-${i}.txt?t=${Date.now()}`).then(res => res.text()).then(async (txt) => {
         window.grid?.destroy();
         const lines = txt.split('\n')
           .map((line) => {
             return line.split('|').map((line) => line.trim());
           });
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (line[0]) {
+            const converted = await convertText(line[0]);
+            line[0] += `|${converted}`;
+          }
+        }
         window.grid = new gridjs.Grid({
           columns: [
             {
@@ -90,10 +113,8 @@
                 if (!cell) {
                   return '*';
                 }
-                const words = cell.split('　').map((word) => {
-                  return `<a href="${translateUrl + encodeURIComponent(word)}" target="_blank">${word}</a>`;
-                }).join('　');
-                const cellHtml = `${words} <a onclick=playSound("${encodeURIComponent(cell.replace(/　/g, ''))}")>🔊</a>`;
+                const [source, converted] = cell.split('|');
+                const cellHtml = `${converted} <a onclick=playSound("${encodeURIComponent(source.replace(/　/g, ''))}")>🔊</a>`;
                 return gridjs.html(`<b>${cellHtml}</b>`);
               },
             },
