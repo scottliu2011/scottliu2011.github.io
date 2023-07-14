@@ -107,7 +107,7 @@
       });
     }
     const navMenus = [];
-    for (let i = 1; i <= learntCount; i++) {
+    for (let i = 0; i <= learntCount; i++) {
       navMenus.push(`<p><a href="#${i}" onclick="showContent(${i})">Séquence ${i}</a></p>`);
     }
     document.getElementById('outline').innerHTML = navMenus.join('');
