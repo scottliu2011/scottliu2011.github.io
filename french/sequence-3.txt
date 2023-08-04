@@ -1,4 +1,4 @@
-Entrer en contact | Enter into a contact
+Entrer en contact | Enter into contact
 
 On se tutoie? | Do we talk to each other?
 Si tu veux. | If you want.
@@ -9,7 +9,7 @@ Vous vous appelez comment? | What is your name?
 Vous habitez òu? | Where do you live?
 3 rue d'Italie, à Nice. | 3 street of Italie, in Nice.
 
-Qu'est-ce que vous faites comme travail? | What do you do as a job?
+Qu'est-ce que vous faites comme travail? | What do you do as job?
 
 Tu vas bien? | Are you doing well?
 Est-ce que vous êtes japonaise? | Are you Japanese?
@@ -23,7 +23,7 @@ Je vous présente Tom. | I present Tom to you.
 Votre petite-fille? | Your granddaughter?
 Qu'elle est jolie! | She is beautiful!
 
-Ça te plaît, Tom? | Do you like it, Tom?
+Ça te plaît? | Do you like it?
 
 Elle ne parle pas encore. | She doesn't speak yet.
 Elle a un an. | She is one year old.
