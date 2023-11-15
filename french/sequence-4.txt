@@ -1,4 +1,5 @@
 Tu connais? | You know?
+Tu ne connais pas? | Don't you know?
 Qui est-ce? | Who is this?
 C'est difficile pour lui. | It's difficult for him.
 
