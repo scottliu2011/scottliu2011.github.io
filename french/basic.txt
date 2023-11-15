@@ -1,0 +1,31 @@
+Bonjour. Comment allez-vous? | Good morning. How are you going?
+Bien, merci. Et vous? | Good, thanks. And you?
+Très bien. | Very good.
+
+Salut. Ça va? | Hi. How are you?
+Oui, et toi? | Nice, and you?
+
+Je m'appelle Pascal. Et toi? | My name is Pascal. And you?
+Moi, c'est Alice. | Me, My name is Alice.
+
+Bonne journée, ciao! | Have a good day, bye!
+Vous aussi, au revoir. | You too, goodbye.
+
+Salut, à demain. | Bye, see you tomorrow.
+Au revoir. | Bye.
+
+Moi aussi j'aime le français. | I also like French.
+Mais c'est difficile pour moi. | But it's difficult for me.
+
+Qui est-ce? | Who is that?
+
+Tu vas bien? | Are you doing well?
+Vous allez bien? | Are you doing well?
+
+Tu connais? | You know?
+Tu ne connais pas? | Don't you know?
+
+Ça te plaît? | Do you like it?
+
+Il apprend le français. | He is learning French.
+C'est difficile pour lui. | It's difficult for him.
