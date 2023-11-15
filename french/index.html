@@ -58,7 +58,6 @@
   <div id="content"></div>
   <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
   <script>
-    const learntCount = 4;
     const frenchPrefix = 'https://scottliu2011.github.io/french';
     const translateUrl = 'https://translate.google.com/?sl=fr&tl=en&op=translate&text=';
     const cachedAudios = {};
@@ -75,9 +74,9 @@
       newAudio.play();
       cachedAudios[key] = newAudio;
     }
-    function showContent(i) {
+    function showContent() {
       window.grid?.destroy();
-      fetch(`${frenchPrefix}/sequence-${i}.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
+      fetch(`${frenchPrefix}/basic.txt?t=${Date.now()}`).then(res => res.text()).then((txt) => {
         const lines = txt.split('\n')
           .map((line) => {
             return line.split('|').map((line) => line.trim());
@@ -106,11 +105,7 @@
         window.grid.render(document.querySelector('#content'));
       });
     }
-    const navMenus = [];
-    for (let i = 0; i <= learntCount; i++) {
-      navMenus.push(`<p><a href="#${i}" onclick="showContent(${i})">Séquence ${i}</a></p>`);
-    }
-    document.getElementById('outline').innerHTML = navMenus.join('');
+    showContent();
   </script>
 </body>
 
