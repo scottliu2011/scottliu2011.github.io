@@ -1,11 +1,14 @@
+It's easy, once you've got the knack.
+你一旦掌握这个技能就容易了。
+
 The firm had accrued debts of over $6m.
 该公司已积欠了600多万元的债务。
 
-The allegation has caused one lecturer's career to bite the dust.
-这项指控断送了一名讲师的前程。
+The allegation has caused his career to bite the dust.
+这项指控断送了他的前程。
 
-His intent is clearly not to placate his critics.
-他的目的显然不是要安抚批评他的人。
+His intent is not to placate his critics.
+他的目的不是要去安抚批评他的人。
 
 The hostess is profuse in her hospitality.
 女主人招待得十分周到。
@@ -13,8 +16,8 @@ The hostess is profuse in her hospitality.
 The thief snatched her purse and ran.
 小偷抢了她的钱包就跑。
 
-Such treaties provide reciprocal rights and obligations.
-此类协议规定了相互之间的权利和义务。
+The treaty provides reciprocal rights.
+这个协议规定了相互之间的权利。
 
 Shoplifters will be prosecuted.
 商店行窃者将被起诉。
@@ -274,14 +277,8 @@ The hydro-power station stands at the junction of two rivers.
 She groped for her glasses on the bedside table.
 她在床头柜上摸着找眼镜。
 
-It's easy, once you've got the knack.
-你一旦掌握这个技能就容易了。
-
 He is a man of considerable business acumen.
 他是一个做生意很精明的人。
-
-Staff are suffering from low morale.
-员工士气低落。
 
 I had a sensation of falling, as if in a dream.
 我有一种坠落的感觉，像是在梦中一样。
