@@ -1,5 +1,3 @@
-Premier jour en classe de français. | The first day in French class.
-
 Bonjour. Comment allez-vous? | Good morning. How are you going?
 Bien, merci. Et vous? | Good, thanks. And you?
 Très bien. | Very good.
@@ -12,13 +10,3 @@ Moi, c'est Alice. | Me, My name is Alice.
 Bonne journée, ciao! | Have a good day, bye!
 Salut, à demain. | Bye, see you tomorrow.
 Au revoir. | Bye.
-
-Je ne comprends pas. | I don't understand.
-Plus fort, s'il vous plaît! | Louder, please!
-Répétez, s'il vous plaît! | Repeat, please!
-
-Vous vous appelez comment? | What is your name?
-Je m'appelle Pascal. | My name is Pascal.
-Tu t'appelles Emma. | Your name is Emma.
-Il s'appelle Pascal. | His name is Pascal.
-Elle s'appelle Alice. | Her name is Alice.
