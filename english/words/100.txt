@@ -1,13 +1,9 @@
-# knack
-
-[næk] n. 本领；技能；习惯；癖好
+knack [næk] n. 本领；技能；习惯；癖好
 
 It's easy, once you've got the knack.
 你一旦掌握这个技能就容易了。
 
-# accrue
-
-[əˈkruː] v.（逐渐）增长；积累（钱款或债务）
+accrue [əˈkruː] v.（逐渐）增长；积累（钱款或债务）
 
 The firm had accrued debts of over $6m.
 该公司已累积欠了600多万元的债务。
