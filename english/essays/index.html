@@ -41,8 +41,8 @@
     </article>
     <script>
       (async function() {
-        const hash = window.location.hash.slice(1);
-        const res = await fetch(`https://scottliu2011.github.io/english/${hash}.txt`);
+        const hash = window.location.hash.slice(1) || 'the-crab';
+        const res = await fetch(`https://scottliu2011.github.io/english/essays/${hash}.txt`);
         const text = await res.text();
         const lines = text.split('\n\n');
         const ul = document.querySelector('ul');
